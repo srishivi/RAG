@@ -1,0 +1,10 @@
+openai 
+azure-search-documents 
+langchain 
+tiktoken
+python-dotenv
+langchain-text-splitters
+pypdf
+fastapi 
+uvicorn 
+python-multipart
