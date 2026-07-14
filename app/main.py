@@ -29,12 +29,12 @@ def run_pipeline():
 
     BASE_DIR = Path(__file__).resolve().parent.parent  # goes to project root
 
-    pdf_path = BASE_DIR / "data" / "documents" / "ShivaniSrivastava_Gen AIEngineer.pdf"
+    pdf_path = BASE_DIR / "data" / "documents" / "ShivaniSrivastava_Gen_AI_Engineer.pdf"
 
     # index_pdf(str(pdf_path))
 
     # Step 2: Query
-    query = "Can you share details like contact, email of the person whose resume you have along with linkedin and Github profiles"
+    query = "What is the summary of '1-2+Simple+RNN.pdf pdf"
 
     log(f"Query: {query}")
 

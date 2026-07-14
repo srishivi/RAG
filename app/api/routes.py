@@ -3,7 +3,7 @@ import shutil
 import os
 
 from app.ingestion.pdf_loader import load_pdf
-from app.ingestion.indexer import index_text
+from app.ingestion.indexer import index_text, index_pdf
 
 from app.retrieval.retriever import retrieve
 from app.retrieval.reranker import rerank_chunks
@@ -29,11 +29,12 @@ async def upload_pdf(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
 
     # Extract + index
-    text = load_pdf(file_path)
-    index_text(text)
+    pages = index_pdf(file_path, source = file.filename)
+    # index_text(text)
 
     return {
-        "message": f"{file.filename} uploaded and indexed successfully"
+        "message": f"{file.filename} uploaded and indexed successfully",
+        "pages_indexed": len(pages)
     }
 
 

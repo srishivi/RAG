@@ -55,5 +55,6 @@ def index_pdf(file_path: str, source: str = "pdf_doc"):
         batch = documents[i:i+BATCH_SIZE]
         search_client.upload_documents(batch)
     print(file_path, "PDF Uploaded")
+    return pages
     # result = search_client.upload_documents(documents)
     # return result
